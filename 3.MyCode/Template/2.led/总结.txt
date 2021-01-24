@@ -1,0 +1,13 @@
+本工程是蓝桥杯嵌入式led的驱动模板
+
+由于在开发板上是通过一片74HC573锁存器来控制LED的，所以我们要操作LED的时候，要操作的是74HC573，
+使能74HC573通过跳线帽与GPIOD_PIN_2相连，输入信号与GPIOC_PIN_8~GPIOC_PIN_15相连，所在在初始化的时候
+要同时初始化GPIOC和GPIOD的相应引脚，并且使能GPIOC和GPIOD的时钟
+
+
+为了编程的快速，可以直接在LCD初始化的函数里面去复制关于GPIO的初始化LCD_CtrlLinesConfig
+
+由于LCD也用到了GPIOC_PIN_8~GPIOC_PIN_15，所以LCD和LED会产生冲突，那么我们只需要在LCD的函数LCD_WriteRAM_Prepare()前后加上
+uint16_t temp1 = GPIOC->ODR;
+GPIOC->ODR = temp1;
+就可以避免冲突了。

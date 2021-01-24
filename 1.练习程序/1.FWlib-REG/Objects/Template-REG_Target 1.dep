@@ -1,0 +1,5 @@
+Dependencies for Project 'Template-REG', Target 'Target 1': (DO NOT MODIFY !)
+F (.\main.c)(0x5FE1DCC4)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections-I F:\Keil_v5\ARM\RV31\INC-I F:\Keil_v5\ARM\CMSIS\Include-I F:\Keil_v5\ARM\Inc\ST\STM32F10x-D__UVISION_VERSION="520"-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
+I (stm32f10x.h)(0x5FE0B908)
+F (.\startup_stm32f10x_md.s)(0x4D783CD2)(--cpu Cortex-M3 -g --apcs=interwork -I F:\Keil_v5\ARM\RV31\INC-I F:\Keil_v5\ARM\CMSIS\Include-I F:\Keil_v5\ARM\Inc\ST\STM32F10x--pd "__UVISION_VERSION SETA 520"--list .\listings\startup_stm32f10x_md.lst --xref -o .\objects\startup_stm32f10x_md.o --depend .\objects\startup_stm32f10x_md.d)
+F (.\stm32f10x.h)(0x5FE0B908)()

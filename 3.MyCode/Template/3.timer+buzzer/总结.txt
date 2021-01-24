@@ -1,0 +1,9 @@
+本工程是蓝桥杯嵌入式TIM的驱动模板
+
+在使用定时器的时候一定要注意，LCD工程模板没有添加tim和NVIC的源文件，所以，在我们自己使用的时候一定要添加到工程里面，否则编译器将找不到
+
+蜂鸣器的引脚是接到PB4的，而默认的情况下，PB4的功能是JNTRST，所以我们要把他重映射为GPIO引脚，同时需要注意，还要使能AFIO功能的时钟
+RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOB | RCC_APB2Periph_AFIO, ENABLE);
+GPIO_PinRemapConfig(GPIO_Remap_SWJ_NoJTRST,ENABLE);
+
+注意：在初始化GPIO的时候一定要细心.

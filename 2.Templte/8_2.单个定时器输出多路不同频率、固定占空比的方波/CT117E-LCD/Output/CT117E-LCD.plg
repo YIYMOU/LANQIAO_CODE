@@ -1,0 +1,13 @@
+<html>
+<body>
+<pre>
+<h1>礦ision Build Log</h1>
+<h2>Project:</h2>
+C:\蓝桥杯视频录制\蓝桥杯嵌入式提高篇\3.国一比赛模板介绍及使用方法\【比赛模板】3.9.2 单个定时器输出多路不同频率、固定占空比的方波\CT117E-LCD\Project\CT117E-LCD.uvproj
+Project File Date:  06/08/2020
+
+<h2>Output:</h2>
+Load "..\\Output\\CT117E-LCD.axf" 
+Erasing Done.
+Program Speed: 8.56 KByte/s
+Programming Done.
