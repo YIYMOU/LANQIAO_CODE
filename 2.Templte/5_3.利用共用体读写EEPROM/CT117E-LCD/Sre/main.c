@@ -15,6 +15,7 @@
 #include "buzzer.h"
 #include "key.h"
 #include "i2c.h"
+#include "string.h"
 
 
 u8 size_u8 = sizeof(u8);				//u8È¡Öµ·¶Î§0~255
@@ -54,6 +55,17 @@ union eeprom_u32
    u32 a;  
    u8 b[4];
 }u32_write;
+
+union eeprom_dat
+{
+	uint8_t t1;
+	uint16_t t2;
+	uint32_t t3;
+	int16_t t4;
+	float f1;
+	double f2;
+	unsigned char str[20];
+}eeprom_dat_write,eeprom_dat_read;
 
 uint8_t lcd_str[20];
 
@@ -101,6 +113,20 @@ int main(void)
 	}
 	sprintf((char*)lcd_str,"s16_read=%4d",s16_read.a);
 	LCD_DisplayStringLine(Line2,lcd_str);
+	
+	eeprom_dat_write.f2 = 3.1415926535;
+	for(i = 0; i < sizeof(eeprom_dat_write.f2); i++)
+	{
+		Write_AT24c02(i,eeprom_dat_write.str[i]);
+		Delay_Ms(5);
+	}
+	for(i = 0; i < sizeof(eeprom_dat_write.f2); i++)
+	{
+		eeprom_dat_read.str[i] = Read_AT24c02(i);
+		Delay_Ms(5);
+	}
+	sprintf((char*)lcd_str,"%f",eeprom_dat_read.f2);
+	LCD_DisplayStringLine(Line4,(unsigned char *)lcd_str);	
 	
 	while(1)
 	{
