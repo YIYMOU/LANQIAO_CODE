@@ -1,6 +1,7 @@
 #include "key.h"
 
-uint8_t Key_Trg;
+uint8_t Key_Trg_Falling;
+uint8_t Key_Trg_Rising;
 uint8_t key_State;
 
 void KEY_Init(void)
@@ -30,9 +31,9 @@ void Key_Read(void)
 					(GPIO_ReadInputDataBit(GPIOB,GPIO_Pin_1) << 2) | (GPIO_ReadInputDataBit(GPIOB,GPIO_Pin_2) << 3);
 	key_Value = key_Value ^ 0xff;		// key1按下，key_state = 0x01,如果没有按键按下，则key_Value = 0
 	
-	//Key_Trg = (!key_Value) * (key_Value ^ key_State); // 检测按键的下降沿
+	Key_Trg_Rising = (!key_Value) * (key_Value ^ key_State); // 检测按键的下降沿
 	
-	Key_Trg = key_Value & (key_Value ^ key_State); // 检测按键的上降沿
+	Key_Trg_Falling = key_Value & (key_Value ^ key_State); // 检测按键的上降沿
 	// 情况1：key1按键第一次按下，此时key_State，Key_Trg = 0x01
 	// 情况2：key1按键持续按下，第二次扫描的时候，此时key_State = 0x01，Key_Trg = 0
 	// 情况3：如果没有按键按下，则key_Value = 0，Key_Trg = 0

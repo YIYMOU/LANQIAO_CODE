@@ -20,6 +20,9 @@ uint16_t led_cnt = 0;
 uint16_t buzzer_cnt = 0;
 uint16_t key_cnt = 0;
 
+uint16_t key1Time = 0;
+uint8_t key1PressNumber = 0;
+
 uint8_t lcd_string[20];
 
 
@@ -42,19 +45,51 @@ void LCD_Display(void)
 void Key_Scan(void)
 {
 	Key_Read();
-	if(Key_Trg == 0x01)
+	
+	if(key1PressNumber == 1)	// 检测到一次按键的上升沿，开始计时
 	{
-		LED_Ctrl(0x10,ENABLE);
+		key1Time += 10;			// 由于按键程序是10ms扫描一次，所以这里加10ms
+		if(key1Time >= 150)	// 如果超过1500ms，表示按键是单击，初始化双击检测
+		{
+			// begin
+			// 在这里添加按键单击的代码
+			LCD_DisplayStringLine(Line8,(unsigned char *)"SINGLE              ");
+			// end
+			key1Time = 0;
+			key1PressNumber = 0;
+		}
 	}
-	else if(Key_Trg == 0x02)
+	
+	if(Key_Trg_Rising == 0x01)	// 按键的上升沿，即按键松开
+	{
+		if(key1PressNumber == 0)	// 表示按键是第一次按键的上升沿
+		{
+			key1PressNumber = 1;		// 做个标记
+		}
+	}
+	
+	if(Key_Trg_Falling == 0x01)	// 检测到按键的下降沿
+	{
+		LED_Ctrl(0x10,ENABLE);		
+		if(key1PressNumber == 1)	// 如果已经捕获到了一次按键的上升沿，并且现在还没有超时，那么这就是一个双击的动作
+		{
+			// begin
+			// （在这里添加双击需要处理的程序）
+			// end
+			LCD_DisplayStringLine(Line8,(unsigned char *)"DOUBLE              ");	
+			key1Time = 0;
+			key1PressNumber = 0;		// 初始化按键双击相关的变量
+		}		
+	}
+	else if(Key_Trg_Falling == 0x02)
 	{
 		LED_Ctrl(0x20,ENABLE);
 	}
-	else if(Key_Trg == 0x04)
+	else if(Key_Trg_Falling == 0x04)
 	{
 		LED_Ctrl(0x40,ENABLE);
 	}
-	else if(Key_Trg == 0x08)
+	else if(Key_Trg_Falling == 0x08)
 	{
 		LED_Ctrl(0x80,ENABLE);
 	}
@@ -68,7 +103,7 @@ void Key_Scan(void)
 		}
 	}
 	
-	if(key_State == 0 && Key_Trg == 0)
+	if(key_State == 0 && Key_Trg_Falling == 0)	// 按键松开
 	{
 		key_pressed_time = 0;
 		key_time = 0;
