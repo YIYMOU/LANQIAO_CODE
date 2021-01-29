@@ -33,12 +33,3 @@
 ..\output\main.o: ..\Inc\lcd.h
 ..\output\main.o: ..\Inc\LED.h
 ..\output\main.o: ..\Inc\tim.h
-..\output\main.o: ..\Inc\buzzer.h
-..\output\main.o: ..\Inc\key.h
-..\output\main.o: F:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
-..\output\main.o: ..\Inc\i2c.h
-..\output\main.o: F:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
-..\output\main.o: ..\Inc\adc.h
-..\output\main.o: ..\Inc\rtc.h
-..\output\main.o: ..\Inc\pwm.h
-..\output\main.o: ..\Inc\pwm_octoggle.h

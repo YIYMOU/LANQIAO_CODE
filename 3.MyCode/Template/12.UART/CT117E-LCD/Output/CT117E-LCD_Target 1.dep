@@ -345,7 +345,7 @@ I (..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_usart.h)(0x4FCEEA26)
 I (..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_wwdg.h)(0x4FCEEA26)
 I (..\Libraries\STM32F10x_StdPeriph_Driver\inc\misc.h)(0x4FCEEA26)
 I (..\Inc\fonts.h)(0x4FCF5AA4)
-F (..\Sre\main.c)(0x6013EA7D)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I ..\Libraries\STM32F10x_StdPeriph_Driver\inc -I ..\Inc -I ..\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32F10x-I F:\Keil_v5\ARM\RV31\INC-I F:\Keil_v5\ARM\CMSIS\Include-I F:\Keil_v5\ARM\Inc\ST\STM32F10x-D__UVISION_VERSION="520" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -D_1010MODE-o ..\output\main.o --omf_browse ..\output\main.crf --depend ..\output\main.d)
+F (..\Sre\main.c)(0x60141CED)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I ..\Libraries\STM32F10x_StdPeriph_Driver\inc -I ..\Inc -I ..\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32F10x-I F:\Keil_v5\ARM\RV31\INC-I F:\Keil_v5\ARM\CMSIS\Include-I F:\Keil_v5\ARM\Inc\ST\STM32F10x-D__UVISION_VERSION="520" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -D_1010MODE-o ..\output\main.o --omf_browse ..\output\main.crf --depend ..\output\main.d)
 I (..\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32F10x\stm32f10x.h)(0x4FCF2276)
 I (F:\Keil_v5\ARM\CMSIS\Include\core_cm3.h)(0x559CEB9A)
 I (F:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x56FE42DE)
@@ -379,16 +379,8 @@ I (..\Libraries\STM32F10x_StdPeriph_Driver\inc\misc.h)(0x4FCEEA26)
 I (..\Inc\lcd.h)(0x4FCF5AA4)
 I (..\Inc\LED.h)(0x600D280C)
 I (..\Inc\tim.h)(0x60113054)
-I (..\Inc\buzzer.h)(0x600A7FB7)
-I (..\Inc\key.h)(0x600CE49A)
 I (F:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x56FE42DE)
-I (..\Inc\i2c.h)(0x600D0443)
 I (F:\Keil_v5\ARM\ARMCC\include\string.h)(0x56FE42DE)
-I (..\Inc\adc.h)(0x600D3665)
-I (..\Inc\rtc.h)(0x600D4F9B)
-I (..\Inc\pwm.h)(0x6011306D)
-I (..\Inc\pwm_octoggle.h)(0x6012D832)
-I (..\Inc\InputCapture.h)(0x6012DF2B)
 I (..\Inc\uart.h)(0x6013D4E4)
 F (..\Sre\stm32f10x_it.c)(0x4FCEEA26)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I ..\Libraries\STM32F10x_StdPeriph_Driver\inc -I ..\Inc -I ..\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32F10x-I F:\Keil_v5\ARM\RV31\INC-I F:\Keil_v5\ARM\CMSIS\Include-I F:\Keil_v5\ARM\Inc\ST\STM32F10x-D__UVISION_VERSION="520" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -D_1010MODE-o ..\output\stm32f10x_it.o --omf_browse ..\output\stm32f10x_it.crf --depend ..\output\stm32f10x_it.d)
 I (..\Inc\stm32f10x_it.h)(0x4FCEEA26)
@@ -677,7 +669,7 @@ I (..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_tim.h)(0x600A756D)
 I (..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_usart.h)(0x4FCEEA26)
 I (..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_wwdg.h)(0x4FCEEA26)
 I (..\Libraries\STM32F10x_StdPeriph_Driver\inc\misc.h)(0x4FCEEA26)
-F (..\Sre\pwm_octoggle.c)(0x6012D877)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I ..\Libraries\STM32F10x_StdPeriph_Driver\inc -I ..\Inc -I ..\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32F10x-I F:\Keil_v5\ARM\RV31\INC-I F:\Keil_v5\ARM\CMSIS\Include-I F:\Keil_v5\ARM\Inc\ST\STM32F10x-D__UVISION_VERSION="520" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -D_1010MODE-o ..\output\pwm_octoggle.o --omf_browse ..\output\pwm_octoggle.crf --depend ..\output\pwm_octoggle.d)
+F (..\Sre\pwm_octoggle.c)(0x60141645)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I ..\Libraries\STM32F10x_StdPeriph_Driver\inc -I ..\Inc -I ..\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32F10x-I F:\Keil_v5\ARM\RV31\INC-I F:\Keil_v5\ARM\CMSIS\Include-I F:\Keil_v5\ARM\Inc\ST\STM32F10x-D__UVISION_VERSION="520" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -D_1010MODE-o ..\output\pwm_octoggle.o --omf_browse ..\output\pwm_octoggle.crf --depend ..\output\pwm_octoggle.d)
 I (..\Inc\pwm_octoggle.h)(0x6012D832)
 I (..\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32F10x\stm32f10x.h)(0x4FCF2276)
 I (F:\Keil_v5\ARM\CMSIS\Include\core_cm3.h)(0x559CEB9A)

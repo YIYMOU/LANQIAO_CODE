@@ -120,7 +120,7 @@ void TIM2_IRQHandler(void)
 {
 	uint16_t capture = 0;
 	float CH2_Duty = 0.3;
-  /* TIM3_CH2 toggling with frequency = 732.4 Hz */
+  /* TIM3_CH2 toggling with frequency = 1464.8 Hz */
   if (TIM_GetITStatus(TIM2, TIM_IT_CC2) != RESET)
   {
     TIM_ClearITPendingBit(TIM2, TIM_IT_CC2);

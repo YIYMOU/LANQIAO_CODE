@@ -31,3 +31,5 @@
 ..\output\uart.o: ..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_usart.h
 ..\output\uart.o: ..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_wwdg.h
 ..\output\uart.o: ..\Libraries\STM32F10x_StdPeriph_Driver\inc\misc.h
+..\output\uart.o: F:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+..\output\uart.o: F:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
