@@ -75,6 +75,8 @@ int main(void)
 				
 			}
 		}
+		
+		LCD_DisplayStringLine(Line5,(unsigned char *)"12345678901234567890");
 	}
 }
 

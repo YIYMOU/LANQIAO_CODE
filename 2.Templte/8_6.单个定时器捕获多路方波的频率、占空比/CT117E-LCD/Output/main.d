@@ -1,9 +1,9 @@
 ..\output\main.o: ..\Sre\main.c
 ..\output\main.o: ..\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32F10x\stm32f10x.h
-..\output\main.o: C:\Keil_v4\ARM\CMSIS\Include\core_cm3.h
-..\output\main.o: C:\Keil_v4\ARM\ARMCC\bin\..\include\stdint.h
-..\output\main.o: C:\Keil_v4\ARM\CMSIS\Include\core_cmInstr.h
-..\output\main.o: C:\Keil_v4\ARM\CMSIS\Include\core_cmFunc.h
+..\output\main.o: F:\Keil_v5\ARM\CMSIS\Include\core_cm3.h
+..\output\main.o: F:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+..\output\main.o: F:\Keil_v5\ARM\CMSIS\Include\core_cmInstr.h
+..\output\main.o: F:\Keil_v5\ARM\CMSIS\Include\core_cmFunc.h
 ..\output\main.o: ..\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32F10x\system_stm32f10x.h
 ..\output\main.o: ..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_conf.h
 ..\output\main.o: ..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_adc.h
@@ -31,7 +31,7 @@
 ..\output\main.o: ..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_wwdg.h
 ..\output\main.o: ..\Libraries\STM32F10x_StdPeriph_Driver\inc\misc.h
 ..\output\main.o: ..\Inc\lcd.h
-..\output\main.o: C:\Keil_v4\ARM\ARMCC\bin\..\include\stdio.h
+..\output\main.o: F:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 ..\output\main.o: ..\Inc\led.h
 ..\output\main.o: ..\Inc\timer.h
 ..\output\main.o: ..\Inc\buzzer.h

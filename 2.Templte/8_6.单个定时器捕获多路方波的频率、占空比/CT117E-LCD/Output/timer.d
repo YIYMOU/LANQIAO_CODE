@@ -1,10 +1,10 @@
 ..\output\timer.o: ..\Sre\timer.c
 ..\output\timer.o: ..\Inc\timer.h
 ..\output\timer.o: ..\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32F10x\stm32f10x.h
-..\output\timer.o: C:\Keil_v4\ARM\CMSIS\Include\core_cm3.h
-..\output\timer.o: C:\Keil_v4\ARM\ARMCC\bin\..\include\stdint.h
-..\output\timer.o: C:\Keil_v4\ARM\CMSIS\Include\core_cmInstr.h
-..\output\timer.o: C:\Keil_v4\ARM\CMSIS\Include\core_cmFunc.h
+..\output\timer.o: F:\Keil_v5\ARM\CMSIS\Include\core_cm3.h
+..\output\timer.o: F:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+..\output\timer.o: F:\Keil_v5\ARM\CMSIS\Include\core_cmInstr.h
+..\output\timer.o: F:\Keil_v5\ARM\CMSIS\Include\core_cmFunc.h
 ..\output\timer.o: ..\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32F10x\system_stm32f10x.h
 ..\output\timer.o: ..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_conf.h
 ..\output\timer.o: ..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_adc.h
