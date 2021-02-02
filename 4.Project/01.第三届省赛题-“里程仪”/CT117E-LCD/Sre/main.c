@@ -1,3 +1,11 @@
+/************************************************
+*蓝桥杯嵌入式第三届省赛题-“里程仪”
+*CSDN：https://blog.csdn.net/qq_43715171
+*码云：https://gitee.com/yiymou
+*GitHub：https://github.com/YIYMOU
+*硬件平台：国信长天CT117E
+*作者：yiymou   2021-02-02
+************************************************/
 #include "stm32f10x.h"
 #include "stdio.h"					// 使用了sprintf函数
 #include "lcd.h"
