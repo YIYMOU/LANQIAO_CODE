@@ -2,7 +2,6 @@
 #include "lcd.h"
 #include "LED.h"
 #include "tim.h" 
-#include "buzzer.h"
 #include "key.h"
 #include "stdio.h"
 
@@ -11,13 +10,11 @@ u32 TimingDelay = 0;
 _Bool key_read_flag = 0;
 _Bool lcd_display_flag = 0;
 _Bool led_flag = 0;
-_Bool buzzer_flag = 0;
 
 uint16_t key_time = 0;
 uint16_t key_pressed_time = 0;
 uint16_t lcd_display_cnt = 0;
 uint16_t led_cnt = 0;
-uint16_t buzzer_cnt = 0;
 uint16_t key_cnt = 0;
 
 uint16_t key1Time = 0;
@@ -39,7 +36,7 @@ void LCD_Display(void)
 	else if(key_time < 50)
 		LCD_DisplayStringLine(Line6,(unsigned char *)"KEY PRESSED  SHORT");
 	else if(key_time >= 50)
-		LCD_DisplayStringLine(Line6,(unsigned char *)"NO KEY PRESSED LONG");
+		LCD_DisplayStringLine(Line6,(unsigned char *)"KEY PRESSED LONG");
 }
 
 void Key_Scan(void)
@@ -119,7 +116,6 @@ int main(void)
 	Delay_Ms(200);
 	LED_Init();
 	KEY_Init();
-	Buzzer_Init();
 	Tim_Init();
 	STM3210B_LCD_Init();
 	LCD_Clear(Blue);
