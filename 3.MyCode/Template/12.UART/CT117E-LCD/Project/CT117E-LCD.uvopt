@@ -149,7 +149,7 @@
         <SetRegEntry>
           <Number>0</Number>
           <Key>coocox-agdi</Key>
-          <Name>setcontext --link-name="Colink" --link-clk=100000 --debug-port=1 --reset=2 --ifrun=1 --erase=2 --cache-code=800 --ifverify=0 --con-opt=0 --driver="E:\keil MDK5\ARM\Flash\STM32F10x_128.FLM"</Name>
+          <Name>setcontext --link-name="Colink" --link-clk=300000 --debug-port=1 --reset=2 --ifrun=1 --erase=2 --cache-code=800 --ifverify=0 --con-opt=0 --driver="F:\Keil_v5\ARM\Flash\STM32F10x_128.FLM"</Name>
         </SetRegEntry>
         <SetRegEntry>
           <Number>0</Number>
