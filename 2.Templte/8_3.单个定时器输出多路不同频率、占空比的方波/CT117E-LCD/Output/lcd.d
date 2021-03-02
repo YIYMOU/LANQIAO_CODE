@@ -1,10 +1,10 @@
 ..\output\lcd.o: ..\Sre\lcd.c
 ..\output\lcd.o: ..\Inc\lcd.h
 ..\output\lcd.o: ..\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32F10x\stm32f10x.h
-..\output\lcd.o: C:\Keil_v4\ARM\CMSIS\Include\core_cm3.h
-..\output\lcd.o: C:\Keil_v4\ARM\ARMCC\bin\..\include\stdint.h
-..\output\lcd.o: C:\Keil_v4\ARM\CMSIS\Include\core_cmInstr.h
-..\output\lcd.o: C:\Keil_v4\ARM\CMSIS\Include\core_cmFunc.h
+..\output\lcd.o: F:\Keil_v5\ARM\CMSIS\Include\core_cm3.h
+..\output\lcd.o: F:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+..\output\lcd.o: F:\Keil_v5\ARM\CMSIS\Include\core_cmInstr.h
+..\output\lcd.o: F:\Keil_v5\ARM\CMSIS\Include\core_cmFunc.h
 ..\output\lcd.o: ..\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32F10x\system_stm32f10x.h
 ..\output\lcd.o: ..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_conf.h
 ..\output\lcd.o: ..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_adc.h
