@@ -1,0 +1,15 @@
+<html>
+<body>
+<pre>
+<h1>礦ision Build Log</h1>
+<h2>Project:</h2>
+F:\01-国信长天\05-项目文件\04-电子大赛\12-现场数据\资源数据包_2019\赛点资源数据包_嵌入式_2019\8-液晶驱动参考例程\CT117E-LCD\Project\CT117E-LCD.uvproj
+Project File Date:  03/05/2019
+
+<h2>Output:</h2>
+Build target 'Target 1'
+assembling startup_stm32f10x_md.s...
+linking...
+Program Size: Code=5764 RO-data=4828 RW-data=52 ZI-data=1636  
+FromELF: creating hex file...
+"..\Output\CT117E-LCD.axf" - 0 Error(s), 0 Warning(s).
