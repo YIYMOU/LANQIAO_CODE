@@ -77,26 +77,34 @@ void key_scan(void)
 	}
 }
 
-//Main Body
-int main(void)
+void lcd_proc(void)
+{
+	memset(lcd_str,0,sizeof(lcd_str));
+	sprintf((char *)lcd_str,"Vim(km/h): %d     ",Vim);
+	LCD_DisplayStringLine(Line1 ,lcd_str);
+	
+	memset(lcd_str,0,sizeof(lcd_str));
+	sprintf((char *)lcd_str,"Vavg(km/h): %d    ",Vavg);
+	LCD_DisplayStringLine(Line3 ,lcd_str);
+	
+	memset(lcd_str,0,sizeof(lcd_str));
+	sprintf((char *)lcd_str,"T(h:m:s): %02d:%02d:%02d   ",driving_time / 3600,driving_time % 3600 / 60,driving_time % 60);
+	LCD_DisplayStringLine(Line5 ,lcd_str);
+	
+	memset(lcd_str,0,sizeof(lcd_str));
+	sprintf((char *)lcd_str,"S(km) : %.1f      ",(float)(current_distance / 1000.0));
+	LCD_DisplayStringLine(Line7 ,lcd_str);
+	
+	memset(lcd_str,0,sizeof(lcd_temp));			// 这一部分的代码是字符串右对齐显示
+	sprintf((char *)lcd_temp,"Total(km):%d",total_distance / 1000);
+	memset(lcd_str,0,sizeof(lcd_str));
+	sprintf((char *)lcd_str,"%20s",lcd_temp);
+	LCD_DisplayStringLine(Line9 ,lcd_str);
+}
+
+void check(void)
 {
 	uint8_t i;
-	NVIC_PriorityGroupConfig(NVIC_PriorityGroup_0);
-	
-	SysTick_Config(SystemCoreClock/1000);
-	
-	led_init();
-	STM3210B_LCD_Init();
-	LCD_Clear(Black);
-	LCD_SetBackColor(Black);
-	LCD_SetTextColor(White);
-	
-	key_init();
-	tim_init();
-	i2c_init();
-	pwm_init(0);
-	// input_capture_init();
-	
 	for(i = 0; i < 8;i++)
 	{
 		eeprom_data.str[i] = eeprom_read(i + 0x10);
@@ -120,56 +128,80 @@ int main(void)
 		total_distance = eeprom_data.distance;
 	}
 	
-	while(1)
+}
+
+void eeprom_proc(void)
+{
+	static uint32_t distance_pre = 0;
+	uint8_t i;
+	if(distance_pre != total_distance)
 	{
-		
-		Vim = (uint8_t)(Frequency * 2 * 3600 / 1000.0 + 0.5);
-		
 		eeprom_data.distance = total_distance;
 		for(i = 0; i < 8;i++)
 		{
 			eeprom_write(i,eeprom_data.str[i]);
 			Delay_Ms(5);
 		}
-		
-		if(driving_time)
-			Vavg = (uint8_t)(current_distance / 1000.0) / driving_time * 3600 / 1000;
-		
-		memset(lcd_str,0,sizeof(lcd_str));
-		sprintf((char *)lcd_str,"Vim(km/h): %d     ",Vim);
-		LCD_DisplayStringLine(Line1 ,lcd_str);
-		
-		memset(lcd_str,0,sizeof(lcd_str));
-		sprintf((char *)lcd_str,"Vavg(km/h): %d    ",Vavg);
-		LCD_DisplayStringLine(Line3 ,lcd_str);
-		
-		memset(lcd_str,0,sizeof(lcd_str));
-		sprintf((char *)lcd_str,"T(h:m:s): %02d:%02d:%02d   ",driving_time / 3600,driving_time % 3600 / 60,driving_time % 60);
-		LCD_DisplayStringLine(Line5 ,lcd_str);
-		
-		memset(lcd_str,0,sizeof(lcd_str));
-		sprintf((char *)lcd_str,"S(km) : %.1f      ",(float)(current_distance / 1000.0));
-		LCD_DisplayStringLine(Line7 ,lcd_str);
-		
-		memset(lcd_str,0,sizeof(lcd_temp));			// 这一部分的代码是字符串右对齐显示
-		sprintf((char *)lcd_temp,"Total(km):%d",total_distance / 1000);
-		memset(lcd_str,0,sizeof(lcd_str));
-		sprintf((char *)lcd_str,"%20s",lcd_temp);
-		LCD_DisplayStringLine(Line9 ,lcd_str);
-		
-		if(led_flag)
+	}
+}
+
+void speed_proc(void)
+{
+	Vim = (uint8_t)(Frequency * 2 * 3600 / 1000.0 + 0.5);
+	
+	if(driving_time)
+		Vavg = (uint8_t)(current_distance / 1000.0) / driving_time * 3600 / 1000;
+}
+
+void led_proc(void)
+{
+	if(led_flag)
+	{
+		led_flag = 0;
+		if(Vim > 90)
 		{
-			led_flag = 0;
-			if(Vim > 90)
-			{
-				led_toggle(LD1);
-			}
+			led_toggle(LD1);
 		}
+	}
+	
+	if(Vim <= 90)
+	{
+		led_ctrl(LD1,DISABLE);
+	}
+}
+
+//Main Body
+int main(void)
+{
+	
+	NVIC_PriorityGroupConfig(NVIC_PriorityGroup_0);
+	
+	SysTick_Config(SystemCoreClock/1000);
+	
+	led_init();
+	STM3210B_LCD_Init();
+	LCD_Clear(Black);
+	LCD_SetBackColor(Black);
+	LCD_SetTextColor(White);
+	
+	key_init();
+	tim_init();
+	i2c_init();
+	pwm_init(0);
+	// input_capture_init();
+	check();
+	
+	while(1)
+	{
 		
-		if(Vim <= 90)
-		{
-			led_ctrl(LD1,DISABLE);
-		}
+		speed_proc();
+		
+		eeprom_proc();
+		
+		lcd_proc();
+		
+		led_proc();
+		
 	}
 }
 
