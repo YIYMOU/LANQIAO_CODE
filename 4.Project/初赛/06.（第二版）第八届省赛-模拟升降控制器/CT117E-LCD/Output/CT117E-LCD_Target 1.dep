@@ -283,7 +283,7 @@ I (..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_usart.h)(0x4FCEEA26)
 I (..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_wwdg.h)(0x4FCEEA26)
 I (..\Libraries\STM32F10x_StdPeriph_Driver\inc\misc.h)(0x4FCEEA26)
 I (..\Inc\fonts.h)(0x4FCF5AA4)
-F (..\Sre\main.c)(0x60728803)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I ..\Libraries\STM32F10x_StdPeriph_Driver\inc -I ..\Inc -I ..\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32F10x-I F:\Keil_v5\ARM\RV31\INC-I F:\Keil_v5\ARM\CMSIS\Include-I F:\Keil_v5\ARM\Inc\ST\STM32F10x-D__UVISION_VERSION="520" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -D_1010MODE-o ..\output\main.o --omf_browse ..\output\main.crf --depend ..\output\main.d)
+F (..\Sre\main.c)(0x60728D82)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I ..\Libraries\STM32F10x_StdPeriph_Driver\inc -I ..\Inc -I ..\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32F10x-I F:\Keil_v5\ARM\RV31\INC-I F:\Keil_v5\ARM\CMSIS\Include-I F:\Keil_v5\ARM\Inc\ST\STM32F10x-D__UVISION_VERSION="520" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -D_1010MODE-o ..\output\main.o --omf_browse ..\output\main.crf --depend ..\output\main.d)
 I (..\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32F10x\stm32f10x.h)(0x4FCF2276)
 I (F:\Keil_v5\ARM\CMSIS\Include\core_cm3.h)(0x559CEB9A)
 I (F:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x56FE42DE)

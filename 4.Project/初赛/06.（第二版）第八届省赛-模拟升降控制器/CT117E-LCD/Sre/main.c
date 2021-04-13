@@ -49,6 +49,10 @@ uint16_t current_platform = F1;
 _Bool waitting_flag = 0;
 uint16_t waitting_cnt = 0;
 
+_Bool lcd_flag1 = 0;
+_Bool lcd_flag2 = 0;
+uint16_t lcd_cnt = 0;
+
 
 //
 void Delay_Ms(u32 nTime)
@@ -103,10 +107,16 @@ void lcd_proc(void)
 	
 	LCD_DisplayStringLine(Line2 ,(unsigned char *)"  CURRENT-PLATFORM ");
 	
-	memset(lcd_str,0,sizeof(lcd_str));
-	sprintf((char*)lcd_str,"         %d          ",(current_platform / 256 / 2 + 1) == 5 ? 4: (current_platform / 256 / 2 + 1));
-	LCD_DisplayStringLine(Line4 ,lcd_str);
-	
+	if(!lcd_flag1 || (!lcd_flag2))
+	{
+		memset(lcd_str,0,sizeof(lcd_str));
+		sprintf((char*)lcd_str,"         %d          ",(current_platform / 256 / 2 + 1) == 5 ? 4: (current_platform / 256 / 2 + 1));
+		LCD_DisplayStringLine(Line4 ,lcd_str);
+	}
+	else
+	{
+		LCD_DisplayStringLine(Line4 ,(unsigned char *)"                   ");
+	}
 	memset(lcd_str,0,sizeof(lcd_str));
 	sprintf((char*)lcd_str,"      %02d:%02d:%02d",THH,TMM,TSS);
 	LCD_DisplayStringLine(Line6 ,lcd_str);
@@ -203,6 +213,7 @@ void state_change(void)
 	else if(state == OPENNING)
 	{
 		update_current_floot();
+		lcd_flag1 = 1;
 		if(aim_floor == 0x0000)
 			state = OFF;						// 如果没有目标平台，那么电梯停止运行
 		else 
@@ -262,7 +273,7 @@ void gpio_proc(void)
 	{
 		GPIOA->ODR &= ~GPIO_Pin_4;
 	}
-	if(state == OPENNING)
+	if(state == OFF || state == STOP)
 	{
 		GPIOA->ODR |= GPIO_Pin_5;
 	}
@@ -342,6 +353,20 @@ void TIM4_IRQHandler(void)
 			waitting_flag = 0;
 			state = CLOSING;
 			direction_check();
+		}
+		
+		if(lcd_flag1 && (++lcd_cnt % 250) == 0)
+		{
+			if(lcd_cnt == 1000)
+			{
+				lcd_flag1 = 0;
+				lcd_cnt = 0;
+				lcd_flag2 = 0;
+			}
+			else
+			{
+				lcd_flag2 = !lcd_flag2;
+			}
 		}
   }
 }

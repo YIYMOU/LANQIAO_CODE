@@ -3,7 +3,7 @@
 <title>Static Call Graph - [..\Output\CT117E-LCD.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image ..\Output\CT117E-LCD.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060183: Last Updated: Sun Apr 11 13:24:22 2021
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060183: Last Updated: Sun Apr 11 13:47:50 2021
 <BR><P>
 <H3>Maximum Stack Usage =        160 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -1187,7 +1187,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[2b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM4_IRQHandler
 </UL>
 
-<P><STRONG><a name="[90]"></a>lcd_proc</STRONG> (Thumb, 124 bytes, Stack size 24 bytes, main.o(.text))
+<P><STRONG><a name="[90]"></a>lcd_proc</STRONG> (Thumb, 146 bytes, Stack size 24 bytes, main.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 160 + Unknown Stack Size
 <LI>Call Chain = lcd_proc &rArr; __2sprintf &rArr; _printf_char_common &rArr; __printf
 </UL>
@@ -1219,7 +1219,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;state_change
 </UL>
 
-<P><STRONG><a name="[97]"></a>state_change</STRONG> (Thumb, 116 bytes, Stack size 4 bytes, main.o(.text))
+<P><STRONG><a name="[97]"></a>state_change</STRONG> (Thumb, 122 bytes, Stack size 4 bytes, main.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = state_change &rArr; update_current_floot
 </UL>
 <BR>[Calls]<UL><LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;update_current_floot
@@ -1244,11 +1244,11 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[48]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[a5]"></a>gpio_proc</STRONG> (Thumb, 86 bytes, Stack size 0 bytes, main.o(.text))
+<P><STRONG><a name="[a5]"></a>gpio_proc</STRONG> (Thumb, 92 bytes, Stack size 0 bytes, main.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[48]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[48]"></a>main</STRONG> (Thumb, 324 bytes, Stack size 0 bytes, main.o(.text))
+<P><STRONG><a name="[48]"></a>main</STRONG> (Thumb, 346 bytes, Stack size 0 bytes, main.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 160 + Unknown Stack Size
 <LI>Call Chain = main &rArr; lcd_proc &rArr; __2sprintf &rArr; _printf_char_common &rArr; __printf
 </UL>
@@ -1274,7 +1274,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[47]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_entry_main
 </UL>
 
-<P><STRONG><a name="[2b]"></a>TIM4_IRQHandler</STRONG> (Thumb, 168 bytes, Stack size 8 bytes, main.o(.text))
+<P><STRONG><a name="[2b]"></a>TIM4_IRQHandler</STRONG> (Thumb, 236 bytes, Stack size 8 bytes, main.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = TIM4_IRQHandler &rArr; key_scan &rArr; key_refresh
 </UL>
 <BR>[Calls]<UL><LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;state_change
