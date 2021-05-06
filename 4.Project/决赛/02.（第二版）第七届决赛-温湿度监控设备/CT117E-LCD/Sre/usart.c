@@ -89,6 +89,7 @@ void usart_init(void)
   
   /* Enable USART2 Receive and Transmit interrupts */
   USART_ITConfig(USART2, USART_IT_RXNE, ENABLE);
+  USART_ITConfig(USART2, USART_IT_IDLE, ENABLE);
 
   /* Enable the USART2 */
   USART_Cmd(USART2, ENABLE);

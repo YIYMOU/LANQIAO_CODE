@@ -3,7 +3,7 @@
 <title>Static Call Graph - [..\Output\12345678.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image ..\Output\12345678.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060183: Last Updated: Sat Apr 17 20:03:20 2021
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060183: Last Updated: Sat Apr 17 20:17:29 2021
 <BR><P>
 <H3>Maximum Stack Usage =        136 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -416,8 +416,8 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[b1]"></a>TIM_TimeBaseInit</STRONG> (Thumb, 122 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tim_init
-<LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pwm_init
+<BR><BR>[Called By]<UL><LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pwm_init
+<LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tim_init
 </UL>
 
 <P><STRONG><a name="[126]"></a>TIM_OC1Init</STRONG> (Thumb, 132 bytes, Stack size 16 bytes, stm32f10x_tim.o(.text), UNUSED)
@@ -483,17 +483,17 @@ Global Symbols
 <P><STRONG><a name="[12d]"></a>TIM_BDTRStructInit</STRONG> (Thumb, 40 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text), UNUSED)
 
 <P><STRONG><a name="[b4]"></a>TIM_Cmd</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;input_capture_init
+<BR><BR>[Called By]<UL><LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pwm_init
+<LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;input_capture_init
 <LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tim_init
-<LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pwm_init
 </UL>
 
 <P><STRONG><a name="[12e]"></a>TIM_CtrlPWMOutputs</STRONG> (Thumb, 30 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text), UNUSED)
 
 <P><STRONG><a name="[b3]"></a>TIM_ITConfig</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;input_capture_init
+<BR><BR>[Called By]<UL><LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pwm_init
+<LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;input_capture_init
 <LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tim_init
-<LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pwm_init
 </UL>
 
 <P><STRONG><a name="[12f]"></a>TIM_GenerateEvent</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text), UNUSED)
@@ -1314,8 +1314,8 @@ Global Symbols
 <P><STRONG><a name="[8f]"></a>led_proc</STRONG> (Thumb, 100 bytes, Stack size 8 bytes, main.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = led_proc
 </UL>
-<BR>[Calls]<UL><LI><a href="#[91]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;led_ctrl
-<LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;led_toggle
+<BR>[Calls]<UL><LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;led_toggle
+<LI><a href="#[91]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;led_ctrl
 </UL>
 <BR>[Called By]<UL><LI><a href="#[35]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
@@ -1370,7 +1370,8 @@ Global Symbols
 <P><STRONG><a name="[35]"></a>main</STRONG> (Thumb, 192 bytes, Stack size 0 bytes, main.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 136<LI>Call Chain = main &rArr; input_capture_proc &rArr; __aeabi_dmul &rArr; _double_epilogue &rArr; _double_round
 </UL>
-<BR>[Calls]<UL><LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;led_init
+<BR>[Calls]<UL><LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pwm_init
+<LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;led_init
 <LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;key_init
 <LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;input_capture_init
 <LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;i2c_init
@@ -1393,11 +1394,10 @@ Global Symbols
 <LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;usart_init
 <LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tim_init
 <LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rtc_init
-<LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pwm_init
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> entry9a.o(.ARM.Collect$$$$0000000B)
 </UL>
-<P><STRONG><a name="[28]"></a>TIM4_IRQHandler</STRONG> (Thumb, 316 bytes, Stack size 8 bytes, main.o(.text))
+<P><STRONG><a name="[28]"></a>TIM4_IRQHandler</STRONG> (Thumb, 278 bytes, Stack size 8 bytes, main.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = TIM4_IRQHandler &rArr; key_scan &rArr; key_refresh
 </UL>
 <BR>[Calls]<UL><LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;key_scan
@@ -1406,7 +1406,7 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f10x_md.o(RESET)
 </UL>
-<P><STRONG><a name="[30]"></a>USART2_IRQHandler</STRONG> (Thumb, 74 bytes, Stack size 8 bytes, main.o(.text))
+<P><STRONG><a name="[30]"></a>USART2_IRQHandler</STRONG> (Thumb, 88 bytes, Stack size 8 bytes, main.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = USART2_IRQHandler &rArr; USART_GetITStatus
 </UL>
 <BR>[Calls]<UL><LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_GetITStatus
@@ -1880,7 +1880,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;usart_init
 </UL>
 
-<P><STRONG><a name="[a5]"></a>usart_init</STRONG> (Thumb, 74 bytes, Stack size 24 bytes, usart.o(.text))
+<P><STRONG><a name="[a5]"></a>usart_init</STRONG> (Thumb, 86 bytes, Stack size 24 bytes, usart.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 92<LI>Call Chain = usart_init &rArr; USART_Init &rArr; RCC_GetClocksFreq
 </UL>
 <BR>[Calls]<UL><LI><a href="#[ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_ITConfig

@@ -60,10 +60,8 @@ struct DATA_ST {
 	TIME time_l;
 } data_st[60];
 
-uint8_t RxCnt = 0;
 uint8_t RxBuffer[20];
 uint8_t RxCounter = 0;
-_Bool RxFlag = 0;
 _Bool RxIdleFlag = 0;
 
 void Delay_Ms(u32 nTime);
@@ -421,13 +419,6 @@ void TIM4_IRQHandler(void)
 			sample_flag = 1;
 			sample_led_flag = 1;
 		}
-		
-		if(RxFlag && ++RxCnt == 50)
-		{
-			RxFlag = 0;
-			RxCnt = 0;
-			RxIdleFlag = 1;
-		}
 	}
 }
 
@@ -442,8 +433,6 @@ void USART2_IRQHandler(void)
   {
     /* Read one byte from the receive data register */
     RxBuffer[RxCounter++] = USART_ReceiveData(USART2);
-		RxFlag = 1;
-		RxCnt = 0;
 		
     if(RxCounter == 20)
     {
@@ -451,4 +440,9 @@ void USART2_IRQHandler(void)
 			RxCounter = 0;
     }
   }
+	else if(USART_GetITStatus(USART2, USART_IT_IDLE) != RESET) 
+	{
+		USART_ReceiveData(USART2);
+		RxIdleFlag = 1;
+	}
 }
