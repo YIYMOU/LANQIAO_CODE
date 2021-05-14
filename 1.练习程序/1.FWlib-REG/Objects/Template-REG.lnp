@@ -1,7 +1,0 @@
---cpu Cortex-M3
-".\objects\main.o"
-".\objects\startup_stm32f10x_md.o"
---strict --scatter ".\Objects\Template-REG.sct"
---summary_stderr --info summarysizes --map --xref --callgraph --symbols
---info sizes --info totals --info unused --info veneers
---list ".\Listings\Template-REG.map" -o .\Objects\Template-REG.axf
